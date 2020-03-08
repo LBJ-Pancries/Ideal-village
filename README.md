@@ -91,17 +91,6 @@ Authors
 [^1]: 注脚的解释
 注释
 ---------------------------
-Markdown将文本转换为 HTML。
-*[HTML]: 超文本标记语言
-KaTex 数学公式
-
----------------------------
-Gamma公式展示 $\Gamma(n) = (n-1)!\quad\forall
-n\in\mathbb N$ 是通过 Euler integral
-$$
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
-$$
-新的数学公式使用了KaTex，其语法与 LaTex基本一致，但也有一些不同的地方，具体请参考KaTex官方使用文档： [https://katex.org/docs/supported.html](https://katex.org/docs/supported.html)
 
 插入甘特图
 ---------------------------
@@ -152,13 +141,6 @@ cond(yes)->e
 cond(no)->op
 ```
 
-gantt
-dateFormat YYYY-MM-DD
-title Adding GANTT diagram functionality to mermaid
-section 现有任务
-已完成 :done, des1, 2014-01-06,2014-01-08
-进行中 :active, des2, 2014-01-09, 3d
-计划中 : des3, after des2, 5d
 
 ```flow
 st=>start: Start:>http://www.google.com[blank]
@@ -176,3 +158,33 @@ cond(no)->para
 para(path1, bottom)->sub1(right)->op1
 para(path2, top)->op1
 ```
+
+<body>
+  <div class="mermaid">
+    gantt
+      dateFormat  YYYY-MM-DD
+
+      section Clickable
+      Visit mermaidjs           :active, cl1, 2014-01-07, 3d
+      Print arguments         :cl2, after cl1, 3d
+      Print task              :cl3, after cl2, 3d
+
+      click cl1 href "https://mermaidjs.github.io/"
+      click cl2 call printArguments("test1", "test2", test3)
+      click cl3 call printTask()
+  </div>
+
+  <script>
+    var printArguments = function(arg1, arg2, arg3) {
+      alert('printArguments called with arguments: ' + arg1 + ', ' + arg2 + ', ' + arg3);
+    }
+    var printTask = function(taskId) {
+      alert('taskId: ' + taskId);
+    }
+    var config = {
+      startOnLoad:true,
+      securityLevel:'loose',
+    };
+    mermaid.initialize(config);
+  </script>
+</body>
