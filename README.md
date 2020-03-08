@@ -81,7 +81,8 @@ var foo = 'bar';
 
 ---------------------------
 Markdown
-: Text-to-HTML conversion tool Authors
+: Text-to-HTML conversion tool
+Authors
 : John
 : Luke
 注脚
@@ -101,8 +102,8 @@ $$
 \Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
 $$
 新的数学公式使用了KaTex，其语法与 LaTex基本一致，但也有一些不同的地方，具体请参考KaTex官方使用文档： [https://katex.org/docs/supported.html](https://katex.org/docs/supported.html)
-插入甘特图
 
+插入甘特图
 ---------------------------
 ```mermaid
 gantt
@@ -113,8 +114,8 @@ section 现有任务
 进行中 :active, des2, 2014-01-09, 3d
 计划中 : des3, after des2, 5d
 ```
-插入UML图
 
+插入UML图
 ------------
 ```mermaid
 sequenceDiagram
@@ -127,6 +128,7 @@ Note right of 王五: 李四想了很长时间, 文字太长了
 李四-->>张三: 打量着王五...
 张三->>王五: 很好... 王五, 你怎么样?
 ```
+
 插入Mermaid流程图
 --------
 ```mermaid
@@ -136,6 +138,7 @@ A --> C(圆角长方形)
 B --> D{菱形}
 C --> D
 ```
+
 插入Flowchart流程图
 -------
 ```mermaid
@@ -156,3 +159,20 @@ section 现有任务
 已完成 :done, des1, 2014-01-06,2014-01-08
 进行中 :active, des2, 2014-01-09, 3d
 计划中 : des3, after des2, 5d
+
+```flow
+st=>start: Start:>http://www.google.com[blank]
+e=>end:>http://www.google.com
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: Yes
+or No?:>http://www.google.com
+io=>inputoutput: catch something...
+para=>parallel: parallel tasks
+
+st->op1->cond
+cond(yes)->io->e
+cond(no)->para
+para(path1, bottom)->sub1(right)->op1
+para(path2, top)->op1
+```
