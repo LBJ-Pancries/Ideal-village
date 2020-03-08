@@ -30,10 +30,11 @@
 **加粗文本** __加粗文本__
 ==标记文本==
 ~~删除文本~~
-> 引用文本
+>引用文本
 H~2~O is是液体。
 2^10^ 运算结果是 1024。
 列表
+
 ---------------------------
 - 项目
 * 项目
@@ -44,10 +45,12 @@ H~2~O is是液体。
 - [ ] 计划任务
 - [x] 完成任务
 链接
+
 ---------------------------
 链接: [link](https://mp.csdn.net).
 图片: ![Alt](https://avatar.csdn.net/7/7/B/1_ralf_hx163com.jpg)
 带尺寸的图片: ![Alt](https://avatar.csdn.net/7/7/B/1_ralf_hx163com.jpg =30x30) 代码片
+
 ---------------------------
 下面展示一些 `内联代码片`。
 ```
@@ -64,6 +67,7 @@ var foo = 'bar';
 默认主题为：Atom One Dark
 可以前往 [**写作中心/博客设置**](https://mp.csdn.net/configure) 在**代码片样式**项进行更改
 表格
+
 ---------------------------
 项目 | Value
 -------- | -----
@@ -74,10 +78,10 @@ var foo = 'bar';
 |:--------:| -------------:|
 | centered 文本居中 | right-aligned 文本居右 |
 自定义列表
+
 ---------------------------
 Markdown
-: Text-to-HTML conversion tool
-Authors
+: Text-to-HTML conversion tool Authors
 : John
 : Luke
 注脚
@@ -89,6 +93,7 @@ Authors
 Markdown将文本转换为 HTML。
 *[HTML]: 超文本标记语言
 KaTex 数学公式
+
 ---------------------------
 Gamma公式展示 $\Gamma(n) = (n-1)!\quad\forall
 n\in\mathbb N$ 是通过 Euler integral
@@ -97,6 +102,7 @@ $$
 $$
 新的数学公式使用了KaTex，其语法与 LaTex基本一致，但也有一些不同的地方，具体请参考KaTex官方使用文档： [https://katex.org/docs/supported.html](https://katex.org/docs/supported.html)
 插入甘特图
+
 ---------------------------
 ```mermaid
 gantt
@@ -108,6 +114,7 @@ section 现有任务
 计划中 : des3, after des2, 5d
 ```
 插入UML图
+
 ------------
 ```mermaid
 sequenceDiagram
@@ -141,3 +148,11 @@ st->op->cond
 cond(yes)->e
 cond(no)->op
 ```
+
+gantt
+dateFormat YYYY-MM-DD
+title Adding GANTT diagram functionality to mermaid
+section 现有任务
+已完成 :done, des1, 2014-01-06,2014-01-08
+进行中 :active, des2, 2014-01-09, 3d
+计划中 : des3, after des2, 5d
